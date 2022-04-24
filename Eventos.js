@@ -5,13 +5,13 @@ const teclas = {
     RIGHT: 39
 };
 
-document.addEventListener("keyup",dibujarTeclado);
+document.addEventListener("keydown",dibujarTeclado);
 const cuadrito = document.getElementById("area_de_dibujo");
 const papel = cuadrito.getContext("2d");
-let x = 150;
-let y = 150;
+let x = 100;
+let y = 100;
 
-dibujarLinea("red", 149, 149, 151, 151, papel);
+dibujarLinea("red", x-1, y-1, x+1, y+1, papel);
 
 function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal, lienzo)
 {
@@ -28,8 +28,8 @@ function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal, lienzo)
 
 function dibujarTeclado(evento)
 {
-    const colorcito = "blue";
-    const movimiento = 10;
+    const colorcito = "green";
+    const movimiento = 01;
     switch(evento.keyCode)
     {
         case teclas.UP:
